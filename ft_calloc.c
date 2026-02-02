@@ -1,5 +1,16 @@
-#include <stdlib.h>  // malloc
-#include <stddef.h>  // size_t
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ervillca <ervillca@student.42barcelona.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/02 15:16:55 by ervillca          #+#    #+#             */
+/*   Updated: 2026/02/02 15:16:55 by ervillca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <libft.h>
 
 void *ft_calloc(size_t count, size_t size)
 {

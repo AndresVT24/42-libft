@@ -1,7 +1,18 @@
-#include <stdlib.h> // malloc
-#include <stddef.h> // size_t
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ervillca <ervillca@student.42barcelona.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/02 15:30:38 by ervillca          #+#    #+#             */
+/*   Updated: 2026/02/02 15:30:38 by ervillca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-size_t ft_strlen(const char *s); // ya la tenemos
+#include <libft.h>
+
+size_t ft_strlen(const char *s);
 void *ft_memcpy(void *dst, const void *src, size_t n); // ya la tenemos
 
 char *ft_strdup(const char *s1)
