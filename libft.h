@@ -1,9 +1,21 @@
-#ifndef LIBFT_H
-#define LIBFT_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ervillca <ervillca@student.42barcelona.co  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/03 14:34:54 by ervillca          #+#    #+#             */
+/*   Updated: 2026/02/03 14:34:58 by ervillca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdlib.h>  // malloc, free
-/**#include <unistd.h>**/  // write
-#include <stddef.h>  // size_t
+#ifndef LIBFT_H
+# define LIBFT_H
+
+# include <stdlib.h>
+# include <unistd.h>
+# include <stddef.h>
 
 typedef struct s_list
 {
@@ -11,7 +23,6 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-/* ------------------ C_BASIC ------------------ */
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -20,7 +31,6 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
-/* ------------------ STRING ------------------ */
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
@@ -35,7 +45,6 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
-/* ------------------ MEMORY ------------------ */
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
@@ -43,14 +52,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
-/* ------------------ STDLIB ------------------ */
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 
-/* ------------------ SPLIT ------------------ */
 char	**ft_split(char const *s, char c);
 
-/* ------------------ FD FUNCTIONS ------------------ */
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
