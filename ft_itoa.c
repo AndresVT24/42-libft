@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ervillca <ervillca@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/02 15:34:03 by ervillca          #+#    #+#             */
-/*   Updated: 2026/02/02 15:34:03 by ervillca         ###   ########.fr       */
+/*   Created: 2026/02/03 12:23:25 by ervillca          #+#    #+#             */
+/*   Updated: 2026/02/03 12:23:25 by ervillca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_itoa(int n)
 {
-	size_t	i;
-	char	*last;
+	long	num;
+	size_t	len;
+	char	*str;
 
-	last = NULL;
-	i = 0;
-	while (s[i])
+	num = n;
+	len = ft_numlen(num);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	if (num < 0)
 	{
-		if (s[i] == (char)c)
-			last = (char *)&s[i];
-		i++;
+		str[0] = '-';
+		num = -num;
 	}
-	if ((char)c == '\0')
-		return ((char *)&s[i]);
-	return (last);
+	if (num == 0)
+		str[0] = '0';
+	while (num > 0)
+	{
+		str[--len] = (num % 10) + '0';
+		num /= 10;
+	}
+	return (str);
 }

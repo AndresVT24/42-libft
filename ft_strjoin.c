@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ervillca <ervillca@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/02 15:34:03 by ervillca          #+#    #+#             */
-/*   Updated: 2026/02/02 15:34:03 by ervillca         ###   ########.fr       */
+/*   Created: 2026/02/03 12:19:10 by ervillca          #+#    #+#             */
+/*   Updated: 2026/02/03 12:19:10 by ervillca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
-	char	*last;
+	size_t	j;
+	char	*join;
 
-	last = NULL;
+	if (!s1 || !s2)
+		return (NULL);
+	join = (char *)malloc(sizeof(char) * 
+			(ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!join)
+		return (NULL);
 	i = 0;
-	while (s[i])
+	j = 0;
+	while (s1[i])
 	{
-		if (s[i] == (char)c)
-			last = (char *)&s[i];
+		join[i] = s1[i];
 		i++;
 	}
-	if ((char)c == '\0')
-		return ((char *)&s[i]);
-	return (last);
+	while (s2[j])
+	{
+		join[i + j] = s2[j];
+		j++;
+	}
+	join[i + j] = '\0';
+	return (join);
 }
