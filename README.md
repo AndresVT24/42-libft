@@ -32,3 +32,6 @@ Para compilar tu librería:
 ```bash
 gcc -Wall -Wextra -Werror -c *.c
 ar rcs libft.a *.o
+```
+## Recursos
+Uso de la IA para entender lo que me piden
